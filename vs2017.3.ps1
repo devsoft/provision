@@ -36,3 +36,7 @@ else
     # & $installer modify --installPath "$($vsInstance.InstallationPath)"  --includeRecommended $modulesToInstall --focusedUi --wait
     .\vs_enterprise__605158827.1441765626.exe modify --installPath "$($vsInstance.InstallationPath)"  --includeRecommended $modulesToInstall --focusedUi --wait
 }
+
+&"C:\Program Files (x86)\Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\VSIXInstaller.exe" Release.vsix /q
+sleep -s 30
+ps |? {$_.Name -eq 'VSIXInstaller'}|% {echo $_;$_.WaitForExit()}
