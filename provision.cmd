@@ -37,6 +37,7 @@ choco install cmder -y --ignore-checksums -f
 choco install 7zip -y --ignore-checksums -f
 choco install golang -y --ignore-checksums -f
 choco install fiddler4 -y --ignore-checksums -f
+choco install thunderbird -y --ignore-checksums -f
 
 echo Installing Softether VPN
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File Softether.ps1
