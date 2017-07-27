@@ -40,3 +40,5 @@ else
 &"C:\Program Files (x86)\Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\VSIXInstaller.exe" Release.vsix /q
 sleep -s 30
 ps |? {$_.Name -eq 'VSIXInstaller'}|% {echo $_;$_.WaitForExit()}
+
+mv "C:\Program Files (x86)\Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\PerfWatson2.exe" "C:\Program Files (x86)\Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\PerfWatson2.exe_"
