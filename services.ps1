@@ -1,4 +1,4 @@
-$services = "AppVClient,Browser,CscService,DiagTrack,DPS,lfsvc,NetTcpPortSharing,PcaSvc,RemoteAccess,SCardSvr,tzautoupdate,UevAgentService,WdiServiceHost,WdiSystemHost,WSearch,wuauserv".split(',')
+$services = "AppVClient,Browser,CscService,DiagTrack,DPS,lfsvc,NetTcpPortSharing,PcaSvc,RemoteAccess,SCardSvr,tzautoupdate,UevAgentService,WdiServiceHost,WdiSystemHost,WSearch,wuauserv,WerSvc,WinRM".split(',')
 $services |%{cmd /C " sc stop $_"}
 echo "Sleep in 60s before disable them"
 sleep -s 60
