@@ -19,6 +19,11 @@ rem choco install visualstudio2017-workload-netcoretools --package-parameters "-
 echo VS CODE
 choco install visualstudiocode -y --ignore-checksums -f
 
+echo Copying Buildtools to C:\Buildtools
+mkdir c:\buildtools
+xcopy /E /D /Q /I Lite c:\buildtools
+powershell  -NoProfile -ExecutionPolicy Bypass -Command "[Environment]::SetEnvironmentVariable('Path', $env:Path + ';C:\buildtools', [EnvironmentVariableTarget]::Machine)"
+
 echo misc software
 choco install vscode-icons -y --ignore-checksums -f
 choco install sublimetext3 -y --ignore-checksums -f
@@ -38,6 +43,7 @@ choco install 7zip -y --ignore-checksums -f
 choco install golang -y --ignore-checksums -f
 choco install fiddler4 -y --ignore-checksums -f
 choco install thunderbird -y --ignore-checksums -f
+choco install netfx-4.6.2-devpack -y --ignore-checksums -f
 
 echo Installing Softether VPN
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File Softether.ps1
